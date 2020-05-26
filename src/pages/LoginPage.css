@@ -1,0 +1,32 @@
+.login-page {
+  position: relative;
+  padding-top: 86px;
+  right: 0px;
+  width: 100%;
+  min-height: 80vh;
+  opacity: 1;
+}
+
+.login-page:after {
+  position: absolute;
+  background-size: cover;
+  content: '';
+  object-fit: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url('../images/road.png');
+  background-size: 180%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+@media (max-width: 900px) {
+  .login-page:after {
+    background-size: 400%;
+  }
+}

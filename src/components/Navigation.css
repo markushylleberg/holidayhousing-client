@@ -1,0 +1,101 @@
+nav {
+  position: fixed;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.05);
+  margin: auto;
+  background: white;
+  height: 86px;
+  z-index: 100;
+}
+
+nav div,
+nav a {
+  margin: auto 0;
+}
+
+nav h3 {
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #452962;
+}
+
+nav div:nth-child(3) {
+  text-align: right;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0 15px;
+  vertical-align: middle;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: #939393;
+}
+
+.btn-primary {
+  cursor: pointer;
+  padding: 10px 28px;
+  background: #452962;
+  border-radius: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  transition: 0.2s ease;
+  color: #ffffff;
+  border: 1px solid #452962;
+  outline: none;
+}
+
+.btn-primary:hover {
+  background: #5c3783;
+}
+
+.btn-secondary {
+  cursor: pointer;
+  padding: 10px 28px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  transition: 0.2s ease;
+  outline: none;
+}
+
+.btn-secondary:hover {
+  background: #5c3783;
+  color: #ffffff;
+  border: 1px solid #5c3783;
+}
+
+.footer-some a {
+  border: 1px solid black;
+  border-radius: 100%;
+  padding: 11px 12px;
+  vertical-align: middle;
+  margin: 0 10px;
+}

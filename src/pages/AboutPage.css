@@ -1,0 +1,72 @@
+.about-page-container {
+  padding-top: 86px;
+  margin: 0 40px;
+}
+
+.about-upper {
+  display: grid;
+  margin: 30px 0;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #452962;
+  color: white;
+}
+
+.about-image {
+  background-image: url('../images/about.png');
+  background-size: 120%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.about-headline {
+  padding: 50px;
+}
+
+.about-headline h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.about-headline h4 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 140.62%;
+  color: #ffffff;
+}
+
+.about-headline a {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: rgb(173, 173, 173);
+  transition: 0.1s ease;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  margin: 30px 0;
+}
+
+.about-headline a:hover {
+  color: white;
+}
+
+@media (max-width: 1300px) {
+  .about-upper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 870px) {
+  .about-upper {
+    grid-template-columns: 1fr;
+  }
+}
