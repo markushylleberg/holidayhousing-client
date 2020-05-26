@@ -13,7 +13,24 @@ const AboutPage = () => {
         </div>
       </div>
       <div className="about-lower">
-        <h1>low</h1>
+        <div>
+          <h3>Discrimination has no place on our platform</h3>
+          <p>
+            From an air mattress in our founders’ apartment to a global
+            community of millions, Airbnb is constantly growing, and so is our
+            responsibility ...
+          </p>
+          <a href="#">Read More</a>
+        </div>
+        <div>
+          <h3>Every host should have access to tools for success</h3>
+          <p>
+            From managing calendars and communication to welcoming guests into
+            their homes, our hosts work hard to facilitate amazing travel
+            experiences ...
+          </p>
+          <a href="#">Read More</a>
+        </div>
       </div>
     </div>
   );

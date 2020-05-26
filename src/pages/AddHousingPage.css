@@ -1,0 +1,15 @@
+.add-housing-container {
+  padding: 86px 40px;
+}
+
+.sub-nav-container h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.sub-nav-container h1 svg {
+  font-size: 22px;
+}

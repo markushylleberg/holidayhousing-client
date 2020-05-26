@@ -4,6 +4,7 @@ import LoginPage from '../pages/LoginPage';
 import SignupPage from '../pages/SignupPage';
 import HomePage from '../pages/HomePage';
 import AboutPage from '../pages/AboutPage';
+import AddHousingPage from '../pages/AddHousingPage';
 
 import './Navigation.css';
 
@@ -11,7 +12,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const Navigation = () => {
   // Is user authenticated?
-  const [userAuthenticated, setUserAuthenticated] = useState(0);
+  const [userAuthenticated, setUserAuthenticated] = useState(1);
 
   return (
     <Router>
@@ -69,6 +70,9 @@ const Navigation = () => {
         </Route>
         <Route exact path="/signup">
           <SignupPage />
+        </Route>
+        <Route exact path="/addhousing">
+          <AddHousingPage />
         </Route>
       </Switch>
     </Router>
