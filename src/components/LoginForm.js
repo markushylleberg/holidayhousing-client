@@ -6,12 +6,25 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     if (email && password) {
-      console.log('Email: ' + email);
-      console.log('Password: ' + password);
-      setMessage('');
+      await fetch('http://gawema.pythonanywhere.com/rest-auth/login/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'Application/json' },
+        body: JSON.stringify({
+          username: email,
+          password: password,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data['non_field_errors']) {
+            return setMessage(data['non_field_errors'][0]);
+          }
+          localStorage.setItem('holidayhousingkey', data['key']);
+          window.location.assign('/home');
+        });
     } else {
       setMessage('Please fill out all the fields.');
     }
@@ -21,11 +34,11 @@ const LoginForm = () => {
     <div className="login-form-container">
       <form onSubmit={handleLogin}>
         <h1>Login</h1>
-        <div class="input-pair">
+        <div className="login-input">
           <label>Email</label>
-          <input type="email" onChange={(e) => setEmail(e.target.value)} />
+          <input type="text" onChange={(e) => setEmail(e.target.value)} />
         </div>
-        <div class="input-pair">
+        <div className="login-input">
           <label>Password</label>
           <input
             type="password"
@@ -33,7 +46,7 @@ const LoginForm = () => {
           />
         </div>
         <button className="btn-wide-primary">Login</button>
-        <p class="err">{message ? message : ''}</p>
+        <p className="err">{message ? message : ''}</p>
       </form>
     </div>
   );

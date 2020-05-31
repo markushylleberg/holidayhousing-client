@@ -9,15 +9,39 @@ const SignupForm = () => {
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     if (firstName && lastName && email && password && passwordConfirm) {
-      console.log('First name: ' + firstName);
-      console.log('Last name: ' + lastName);
-      console.log('Email: ' + email);
-      console.log('Password: ' + password);
-      console.log('Password confirm: ' + passwordConfirm);
-      setMessage('');
+      await fetch('http://gawema.pythonanywhere.com/rest-auth/registration/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'Application/json' },
+        body: JSON.stringify({
+          username: email,
+          password1: password,
+          password2: passwordConfirm,
+          email: email,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data['email']) {
+            const err = data['email'][0];
+            return setMessage(err);
+          }
+          if (data['password1']) {
+            const err = data['password1'][0];
+            return setMessage(err);
+          }
+
+          if (data['non_field_errors']) {
+            const err = data['non_field_errors'][0];
+            return setMessage(err);
+          }
+
+          localStorage.setItem('holidayhousingkey', data['key']);
+          window.location.assign('/home');
+        });
     } else {
       setMessage('Please fill out all fields.');
     }

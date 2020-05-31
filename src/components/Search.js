@@ -63,7 +63,7 @@ const Search = () => {
   };
 
   return (
-    <div class="search-container">
+    <div className="search-container">
       <form onSubmit={handleSearch}>
         <div className="select-pair">
           <Select

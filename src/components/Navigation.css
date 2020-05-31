@@ -13,6 +13,7 @@ nav {
 nav div,
 nav a {
   margin: auto 0;
+  padding: 0 20px;
 }
 
 nav h3 {

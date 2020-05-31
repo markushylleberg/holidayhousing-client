@@ -1,18 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import LoginPage from '../pages/LoginPage';
 import SignupPage from '../pages/SignupPage';
 import HomePage from '../pages/HomePage';
+import SingleView from '../pages/SingleView';
 import AboutPage from '../pages/AboutPage';
 import AddHousingPage from '../pages/AddHousingPage';
+import Logout from '../components/Logout';
 
 import './Navigation.css';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-const Navigation = () => {
-  // Is user authenticated?
-  const [userAuthenticated, setUserAuthenticated] = useState(1);
+const Navigation = (props) => {
+  const [userAuthenticated, setUserAuthenticated] = useState(props.userAuth);
+
+  useEffect(() => {
+    const handleUserAuth = () => {
+      setUserAuthenticated(props.userAuth);
+    };
+    handleUserAuth();
+  }, [props]);
 
   return (
     <Router>
@@ -62,6 +70,9 @@ const Navigation = () => {
         <Route exact path="/home">
           <HomePage />
         </Route>
+        <Route exact path="/home/:id">
+          <SingleView />
+        </Route>
         <Route exact path="/about">
           <AboutPage />
         </Route>
@@ -70,6 +81,9 @@ const Navigation = () => {
         </Route>
         <Route exact path="/signup">
           <SignupPage />
+        </Route>
+        <Route exact path="/logout">
+          <Logout />
         </Route>
         <Route exact path="/addhousing">
           <AddHousingPage />
