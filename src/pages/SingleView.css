@@ -37,7 +37,8 @@
   grid-template-columns: 1fr 1fr;
 }
 #mainInfoCon h3 {
-  font-size: 24px;
+  font-size: 16px;
+  font-weight: 100;
   margin: 40px 0 20px;
 }
 #houseVac {
@@ -52,7 +53,6 @@
 }
 #houseInfoCon p {
   margin: 20px 0;
-  padding: 0 20px;
   font-size: 20px;
 }
 #purpleBox {
@@ -92,6 +92,7 @@
   clear: both;
   background-color: #fff;
   border: none;
+  cursor: pointer;
   margin-top: 10px;
   border-radius: 8px;
   padding: 15px 20px;
@@ -103,4 +104,25 @@
 }
 #houseMapCon {
   margin: 100px 0 130px;
+}
+
+@media (max-width: 860px) {
+  #purpleBox {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #bookingCon {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #purpleBox #bookingCon button {
+    float: none;
+    margin-top: 20px;
+  }
+
+  #bookingCon h3 {
+    text-align: center !important;
+  }
 }

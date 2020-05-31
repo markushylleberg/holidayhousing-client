@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { Link } from 'react-router-dom';
+import { FaLongArrowAltLeft } from 'react-icons/fa';
 
 import './SingleView.css';
 
@@ -58,7 +60,12 @@ const SingleView = () => {
       <div id="imgCon">
         <img src={house.thumbnail} alt={house.thumbnail} />
       </div>
-      <div id="container">
+      <div className="w-60">
+        <div className="my-1 back-arrow">
+          <Link to="/home">
+            <FaLongArrowAltLeft />
+          </Link>
+        </div>
         <div id="mainInfoCon">
           <h3>{house.city}</h3>
           <h3 id="houseVac">{house.vacancy}</h3>
@@ -80,7 +87,7 @@ const SingleView = () => {
             <h2>Book this place</h2>
             <h3>
               {house.price_per_night}
-              <span>DKK / night</span>
+              <span> DKK / night</span>
             </h3>
             <button>Book now</button>
           </div>

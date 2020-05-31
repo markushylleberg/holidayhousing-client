@@ -49,6 +49,7 @@ const EditHousingForm = (props) => {
         title,
         description,
         thumbnail: image,
+        city,
         street,
         number,
         floor,
@@ -167,7 +168,7 @@ const EditHousingForm = (props) => {
             onChange={(e) => setFloor(e.target.value)}
           />
         </div>
-        <div className="input-pair req">
+        <div className="input-pair">
           <label>Direction (left, right, middle)</label>
           <input
             type="text"
@@ -183,11 +184,11 @@ const EditHousingForm = (props) => {
             onChange={(e) => setPrice(e.target.value)}
           />
         </div>
-        <button className="btn btn-primary">Add new housing</button>
+        <button className="btn btn-primary">Update housing</button>
         <p>{message ? message : <></>}</p>
       </form>
-      <button onClick={handleHousingDeletion} className="btn btn-danger">
-        <FaTrash />
+      <button onClick={handleHousingDeletion} className="btn btn-danger my-3">
+        <FaTrash /> Delete housing
       </button>
     </div>
   );

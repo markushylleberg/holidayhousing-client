@@ -130,7 +130,7 @@ const AddHousingForm = () => {
           <label>Floor</label>
           <input type="text" onChange={(e) => setFloor(e.target.value)} />
         </div>
-        <div className="input-pair req">
+        <div className="input-pair">
           <label>Direction (left, right, middle)</label>
           <input type="text" onChange={(e) => setDirection(e.target.value)} />
         </div>

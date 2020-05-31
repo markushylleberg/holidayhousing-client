@@ -1,4 +1,4 @@
-nav {
+.nav-wrapper {
   position: fixed;
   width: 100%;
   display: grid;
@@ -10,13 +10,13 @@ nav {
   z-index: 100;
 }
 
-nav div,
-nav a {
+.nav-wrapper div,
+.nav-wrapper a {
   margin: auto 0;
   padding: 0 20px;
 }
 
-nav h3 {
+.nav-wrapper h3 {
   text-align: center;
   font-family: Roboto;
   font-style: normal;
@@ -30,11 +30,11 @@ nav h3 {
   color: #452962;
 }
 
-nav div:nth-child(3) {
+.nav-wrapper div:nth-child(3) {
   text-align: right;
 }
 
-nav a {
+.nav-wrapper a {
   text-decoration: none;
   padding: 0 15px;
   vertical-align: middle;
@@ -47,7 +47,7 @@ nav a {
   transition: 0.2s ease;
 }
 
-nav a:hover {
+.nav-wrapper a:hover {
   color: #939393;
 }
 
@@ -110,6 +110,10 @@ nav a:hover {
   outline: none;
 }
 
+.btn-danger svg {
+  font-size: 11px;
+}
+
 .btn-danger:hover {
   background: #9e0909;
   color: #ffffff;
@@ -122,4 +126,123 @@ nav a:hover {
   padding: 11px 12px;
   vertical-align: middle;
   margin: 0 10px;
+}
+
+.nav-user {
+  color: #452962;
+  margin: 0px 10px;
+  cursor: pointer;
+  width: 45px;
+  transition: 0.1 ease;
+}
+
+.nav-user:hover {
+  color: #5c3783;
+}
+
+.nav-dropdown {
+  display: grid;
+  position: fixed;
+  padding: 98px 30px 10px 30px;
+  text-align: right;
+  background-color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  width: 230px;
+  right: 0px;
+}
+
+.nav-dropdown-divider {
+  width: 100%;
+  border-top: 1px solid rgba(194, 194, 194, 0.363);
+}
+
+.nav-dropdown a {
+  padding: 10px 0;
+  color: #452962;
+}
+
+.nav-dropdown a:hover {
+  color: #7849aa !important;
+}
+
+.mobile-nav {
+  display: none;
+  height: 60px;
+  padding: 0 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.05);
+  margin: auto;
+  background: white;
+  height: 86px;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+}
+
+.mobile-menu {
+  text-align: right;
+  padding: 0 20px;
+  height: 0px;
+  transition: 0.5s ease;
+  display: none;
+}
+
+.mobile-menu.active {
+  height: auto;
+  display: block;
+}
+
+.mobile-menu div {
+  margin: 5px 0;
+}
+
+.nav-icon {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.mobile-menu {
+  position: fixed;
+  width: 100%;
+  padding-top: 86px;
+  display: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.05);
+  margin: auto;
+  background: white;
+  height: 86px;
+  z-index: 100;
+}
+
+@media (max-width: 820px) {
+  .mobile-nav {
+    display: grid;
+    padding: 15px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-dropdown {
+    display: none !important;
+  }
+
+  .logo-container p {
+    font-size: 20px;
+    margin-top: 15px;
+    text-align: left;
+    font-family: Roboto;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #452962;
+  }
+
+  .logo-container p span {
+    font-size: 10px;
+  }
+
+  .nav-wrapper {
+    display: none;
+  }
 }

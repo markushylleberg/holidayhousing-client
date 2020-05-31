@@ -51,23 +51,23 @@ const SignupForm = () => {
     <div className="signup-form-container">
       <form onSubmit={handleSignup}>
         <h1>Sign up</h1>
-        <div class="input-pair">
+        <div className="login-input">
           <label>First name</label>
           <input type="text" onChange={(e) => setFirstName(e.target.value)} />
         </div>
-        <div class="input-pair">
+        <div className="login-input">
           <label>Last name</label>
           <input type="text" onChange={(e) => setLastName(e.target.value)} />
         </div>
-        <div class="input-pair">
+        <div className="login-input">
           <label>Email</label>
           <input type="text" onChange={(e) => setEmail(e.target.value)} />
         </div>
-        <div class="input-pair">
+        <div className="login-input">
           <label>Password</label>
           <input type="text" onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <div class="input-pair">
+        <div className="login-input">
           <label>Confirm password</label>
           <input
             type="text"

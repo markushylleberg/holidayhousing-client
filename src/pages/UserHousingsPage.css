@@ -24,7 +24,8 @@
 }
 
 .user-housing-entry div {
-  height: 100%;
+  height: 170px;
+  overflow: hidden;
 }
 
 .user-housing-entry div p,
@@ -44,6 +45,14 @@
 
 .user-housing-entry div img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin: auto;
+}
+
+@media (max-width: 930px) {
+  .user-housing-entry {
+    grid-template-columns: 1fr;
+    min-height: none;
+    max-height: none;
+  }
 }
