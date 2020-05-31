@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import './HouseAndOverview.css';
+
 const House = (props) => {
   const [image, setImage] = useState('');
   const [title, setTitle] = useState('');
@@ -12,38 +14,32 @@ const House = (props) => {
   useEffect(() => {
     setImage(props.image);
     setTitle(props.title);
-    setDescription(props.description);
+    setDescription(props.desc);
     setCity(props.city);
-    setLocation(props.location);
     setVacancy(props.vacancy);
-    setPrice(props.price_per_night);
+    setPrice(props.price);
     console.log(props);
     // const pers = 2;
     // const beds = 1;
     // const baths = 1;
   }, [props]);
   return (
-    <div>
-      <div>
+    <div className="singleHouseCon">
+      <div className="imgCon">
         {image !== '' ? (
-          <img src={props.image} style={{ width: '200px' }} alt={props.image} />
+          <img className="houseImg" src={props.image} alt={props.image} />
         ) : (
           <></>
         )}
       </div>
-      <div>
-        <h2>{vacancy}</h2>
-        <h2>{title}</h2>
-        <p>{description}</p>
+      <div className="houseInfoCon">
+        <h4 className="houseVac">{vacancy}</h4>
+        <h2 className="houseTitle">{title}</h2>
+        <p className="houseDesc">{description}</p>
       </div>
-      <div>
-        <h3>{location}</h3>
-        {/* <ul>
-          <li>{pers}</li>
-          <li>{beds}</li>
-          <li>{baths}</li>
-        </ul> */}
-        <h2>
+      <div className="priceCon">
+        <h3 className="houseLocation">{city}</h3>
+        <h2 className="housePrice">
           {price} <span>DKK / night</span>
         </h2>
       </div>

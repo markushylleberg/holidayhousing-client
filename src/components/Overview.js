@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import House from './House';
-// import Singleview from './singleview';
-import './Overview.css';
+
+import './HouseAndOverview.css';
 
 const Overview = () => {
   const [houses] = useState([]);
@@ -16,6 +16,7 @@ const Overview = () => {
           for (let i = 0; i < houseData.length; i++) {
             houses.push(houseData[i]);
           }
+          console.log(houses);
           setLoading(false);
         });
     }
@@ -27,7 +28,7 @@ const Overview = () => {
       <h3>{isLoading ? 'Loading' : ''}</h3>
 
       {houses.map((house, index) => (
-        <li key={index}>
+        <div key={index}>
           <Link to={`/home/${house.id}`}>
             <House
               id={house.id}
@@ -40,9 +41,8 @@ const Overview = () => {
               price={house.price_per_night}
               vacancy={house.vacancy}
             />{' '}
-            */
           </Link>
-        </li>
+        </div>
       ))}
     </div>
   );

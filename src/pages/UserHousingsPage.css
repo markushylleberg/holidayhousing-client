@@ -1,0 +1,10 @@
+.user-housings-container {
+  padding: 86px 0;
+}
+
+.user-housing-entry {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 15px 0;
+}

@@ -6,6 +6,7 @@ import HomePage from '../pages/HomePage';
 import SingleView from '../pages/SingleView';
 import AboutPage from '../pages/AboutPage';
 import AddHousingPage from '../pages/AddHousingPage';
+import UserHousingsPage from '../pages/UserHousingsPage';
 import Logout from '../components/Logout';
 
 import './Navigation.css';
@@ -84,6 +85,9 @@ const Navigation = (props) => {
         </Route>
         <Route exact path="/logout">
           <Logout />
+        </Route>
+        <Route exact path="/myhousings">
+          <UserHousingsPage />
         </Route>
         <Route exact path="/addhousing">
           <AddHousingPage />
