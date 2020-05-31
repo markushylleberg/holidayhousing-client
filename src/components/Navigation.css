@@ -93,6 +93,29 @@ nav a:hover {
   border: 1px solid #5c3783;
 }
 
+.btn-danger {
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 16px;
+  color: #9e0909;
+  border: 1px solid #9e0909;
+  border-radius: 5px;
+  transition: 0.1s ease;
+  outline: none;
+}
+
+.btn-danger:hover {
+  background: #9e0909;
+  color: #ffffff;
+  border: 1px solid #9e0909;
+}
+
 .footer-some a {
   border: 1px solid black;
   border-radius: 100%;

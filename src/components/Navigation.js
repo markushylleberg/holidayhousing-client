@@ -7,6 +7,7 @@ import SingleView from '../pages/SingleView';
 import AboutPage from '../pages/AboutPage';
 import AddHousingPage from '../pages/AddHousingPage';
 import UserHousingsPage from '../pages/UserHousingsPage';
+import SingleUserHousingsPage from '../pages/SingleUserHousingsPage';
 import Logout from '../components/Logout';
 
 import './Navigation.css';
@@ -88,6 +89,9 @@ const Navigation = (props) => {
         </Route>
         <Route exact path="/myhousings">
           <UserHousingsPage />
+        </Route>
+        <Route exact path="/myhousings/:id">
+          <SingleUserHousingsPage />
         </Route>
         <Route exact path="/addhousing">
           <AddHousingPage />

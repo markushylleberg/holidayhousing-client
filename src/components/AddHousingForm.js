@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 
 const AddHousingForm = () => {
+  const history = useHistory();
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
@@ -55,7 +58,13 @@ const AddHousingForm = () => {
         owner: 1,
       }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.ok) {
+          history.push('/myhousings');
+        }
+
+        return res.json();
+      })
       .then((data) => {
         console.log(data);
 
@@ -81,8 +90,8 @@ const AddHousingForm = () => {
 
   return (
     <div className="add-housing-form w-60">
-      <h1>
-        <FaHome /> Add new housing
+      <h1 className="my-2 headline">
+        <FaHome /> Add housing
       </h1>
       <form onSubmit={handleNewHouseSubmit}>
         <div className="input-pair req">

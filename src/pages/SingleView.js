@@ -34,8 +34,6 @@ const SingleView = () => {
   // const latInt = parseFloat(house.laditude);
   // const lngInt = parseFloat(house.longitude);
 
-  console.log('lat: ', latInt, ' lng: ', lngInt);
-
   const defaultCenter = {
     lat: latInt,
     lng: lngInt,
