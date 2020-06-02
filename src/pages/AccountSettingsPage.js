@@ -53,7 +53,19 @@ const AccountSettingsPage = () => {
     });
   };
 
-  const handleAccountDeletion = async (e) => {};
+  const handleAccountDeletion = async (e) => {
+    e.preventDefault();
+    await fetch(`http://gawema.pythonanywhere.com/api/users/${userId}/`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Token ${key}`,
+      },
+    }).then((res) => {
+      if (res.ok) {
+        window.location.assign('/login');
+      }
+    });
+  };
 
   return (
     <div className="account-settings-container w-60">

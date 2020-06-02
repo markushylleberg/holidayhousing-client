@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import InstagramPost from '../components/InstagramPost';
 import { useParams } from 'react-router-dom';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { Link } from 'react-router-dom';
@@ -11,6 +12,7 @@ const SingleView = () => {
   const [isLoading, setLoading] = useState(true);
   const params = useParams();
   const [selected, setSelected] = useState({});
+  const [instaPosts, setInstaPosts] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -20,7 +22,23 @@ const SingleView = () => {
           setHouse(houseData);
         });
     }
+    async function fetchInstaPosts() {
+      await fetch(
+        'http://gawema.pythonanywhere.com/api/ig/posts?profile=scandinavianhomes'
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setInstaPosts(data);
+          const script = document.createElement('script');
+          script.src =
+            'https://instagram.com/static/bundles/es6/EmbedSDK.js/47c7ec92d91e.js';
+          script.async = true;
+
+          document.body.append(script);
+        });
+    }
     fetchData();
+    fetchInstaPosts();
   }, []);
 
   const mapStyles = {
@@ -33,8 +51,6 @@ const SingleView = () => {
 
   const latInt = parseFloat(latText);
   const lngInt = parseFloat(lngText);
-  // const latInt = parseFloat(house.laditude);
-  // const lngInt = parseFloat(house.longitude);
 
   const defaultCenter = {
     lat: latInt,
@@ -92,19 +108,24 @@ const SingleView = () => {
             <button>Book now</button>
           </div>
         </div>
-        <div id="houseMapCon">
-          <LoadScript googleMapsApiKey="AIzaSyAxMimz0Axr0W0XbrsqWjHgowCNdq2BFTg">
-            <GoogleMap
-              mapContainerStyle={mapStyles}
-              zoom={13}
-              center={defaultCenter}
-            >
-              {locations.map((item) => {
-                return <Marker key={item.name} position={item.location} />;
-              })}
-            </GoogleMap>
-          </LoadScript>
-        </div>
+      </div>
+      <div className="instagram-container">
+        {instaPosts.map((post) => {
+          return <InstagramPost id={post} />;
+        })}
+      </div>
+      <div id="houseMapCon">
+        <LoadScript googleMapsApiKey="AIzaSyAxMimz0Axr0W0XbrsqWjHgowCNdq2BFTg">
+          <GoogleMap
+            mapContainerStyle={mapStyles}
+            zoom={13}
+            center={defaultCenter}
+          >
+            {locations.map((item) => {
+              return <Marker key={item.name} position={item.location} />;
+            })}
+          </GoogleMap>
+        </LoadScript>
       </div>
     </div>
   );

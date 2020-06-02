@@ -26,6 +26,8 @@
 #imgCon {
   width: 100%;
   height: 560px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 #imgCon img {
   width: 100vw;
@@ -99,6 +101,15 @@
   font-size: 20px;
   transition: 0.3s;
 }
+
+.instagram-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  width: 100vw;
+  margin: 5vw;
+}
+
 #purpleBox #bookingCon button:hover {
   background-color: #ddd;
 }
@@ -106,10 +117,21 @@
   margin: 100px 0 130px;
 }
 
+@media (max-width: 1100px) {
+  .instagram-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 860px) {
   #purpleBox {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .instagram-container {
+    grid-template-columns: 1fr;
+    margin: 0 20vw;
   }
 
   #bookingCon {

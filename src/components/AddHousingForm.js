@@ -126,7 +126,7 @@ const AddHousingForm = () => {
           <label>City</label>
           <input type="text" onChange={(e) => setCity(e.target.value)} />
         </div>
-        <div className="input-pair req">
+        <div className="input-pair">
           <label>Floor</label>
           <input type="text" onChange={(e) => setFloor(e.target.value)} />
         </div>

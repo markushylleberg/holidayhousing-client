@@ -160,7 +160,7 @@ const EditHousingForm = (props) => {
             onChange={(e) => setCity(e.target.value)}
           />
         </div>
-        <div className="input-pair req">
+        <div className="input-pair">
           <label>Floor</label>
           <input
             type="text"
